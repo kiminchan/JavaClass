@@ -50,14 +50,21 @@ public class StackClass {
     public static void main(String[] args) {
 
         StackClass sc = new StackClass();
-        sc.stack_push(10);
-        sc.stack_push(10);
-        sc.stack_push(10);
-        sc.stack_push(10);
-        sc.stack_push(10);
-
         sc.stack_pop();
         sc.stack_print();
+
+        sc.stack_push(10);
+        sc.stack_push(10);
+        sc.stack_push(10);
+        sc.stack_push(10);
+        sc.stack_push(10);
+        sc.stack_push(10);
+        sc.stack_push(10);
+        sc.stack_push(10);
+        sc.stack_push(10);
+        sc.stack_push(10);
+        sc.stack_print();
+        sc.stack_push(10);
 
     }   
 }
