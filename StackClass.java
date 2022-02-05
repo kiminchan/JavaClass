@@ -1,8 +1,11 @@
 public class StackClass {
     public static final int STACKSIZE = 10;
     private int top = -1;
-    private int[] stack = new int[STACKSIZE];
+    private int[] stack ;
     
+    public StackClass() {
+        stack = new int[STACKSIZE];
+    }
     // 스택이 비웠는지 확인 
     public boolean stack_empty() {
         if(top == -1) {
