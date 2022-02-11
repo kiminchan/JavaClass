@@ -50,5 +50,7 @@ public class StringClass {
     
     // hashcode()
         System.out.println(myStr.hashCode());
+
+        
     }
 }

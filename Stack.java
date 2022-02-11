@@ -1,13 +1,13 @@
-public class StackClass {
-    public static final int STACKSIZE = 10;
+public class Stack {
+    public static final int SIZE = 10;
     private int top = -1;
     private int[] stack ;
     
-    public StackClass() {
-        stack = new int[STACKSIZE];
+    public Stack() {
+        stack = new int[SIZE];
     }
     // 스택이 비웠는지 확인 
-    public boolean stack_empty() {
+    public boolean empty() {
         if(top == -1) {
            return true;
         } else {
@@ -16,8 +16,8 @@ public class StackClass {
     }
 
     // 스택이 꽉 찼는지 확인 
-    public boolean stack_pull() {
-        if(top == STACKSIZE-1) {
+    public boolean pull() {
+        if(top == SIZE-1) {
             return true;
         } else {
             return false;
@@ -25,8 +25,8 @@ public class StackClass {
     }
 
     // 스택에 데이터 삽입 
-    public void stack_push(int data) {
-        if(stack_pull()) {
+    public void push(int data) {
+        if(pull()) {
             System.out.println("스택이 가득 찼습니다. 스택을 비워주세요.");
         } else {
            stack[top+1] = data;
@@ -35,8 +35,8 @@ public class StackClass {
     }
 
     // 스택의 데이터 삭제 
-    public void stack_pop() {
-        if(stack_empty()) {
+    public void pop() {
+        if(empty()) {
             System.out.println("스택이 비었습니다. 제거할 데이터가 없습니다.");
         } else {
             stack[top] = 0;
@@ -44,30 +44,24 @@ public class StackClass {
         }
     }
 
-    public void stack_print() {
-        for(int i=0; i<STACKSIZE-1; i++) {
+    public void print() {
+        for(int i=0; i<SIZE-1; i++) {
             System.out.println(stack[i]);
         }
     }
 
     public static void main(String[] args) {
 
-        StackClass sc = new StackClass();
-        sc.stack_pop();
-        sc.stack_print();
+        Stack sc = new Stack();
+        sc.pop();
+        sc.print();
 
-        sc.stack_push(10);
-        sc.stack_push(10);
-        sc.stack_push(10);
-        sc.stack_push(10);
-        sc.stack_push(10);
-        sc.stack_push(10);
-        sc.stack_push(10);
-        sc.stack_push(10);
-        sc.stack_push(10);
-        sc.stack_push(10);
-        sc.stack_print();
-        sc.stack_push(10);
+        for(int i =0; i< SIZE; i++){
+            sc.push(10);
+        }
+        sc.print();
+        sc.push(10);
+        
 
     }   
 }
