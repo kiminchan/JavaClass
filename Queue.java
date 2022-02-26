@@ -11,7 +11,7 @@ public class Queue<T>{
     }
 
     // 큐가 비었는지 확인 
-    public boolean empty() {
+    public boolean isEmpty() {
         if(front == rear) {
             return true;
         } else {
@@ -20,7 +20,7 @@ public class Queue<T>{
     }
 
     // 큐가 꽉차있는지 확인 
-    public boolean pull() {
+    public boolean isPull() {
         if(front == ((rear+1)%SIZE)) {
             return true;
         } else {
@@ -30,19 +30,19 @@ public class Queue<T>{
 
     // 큐 삽입 
     public void push(T data) {
-        if(pull()) {
+        if(isPull()) {
             System.out.println("큐가 가득찼습니다. 비워주세요");
         } else {
-            rear += (1 % SIZE);
+            rear = (rear+1) % SIZE;
             queue[rear] = data;
         }
     }
     // 큐 삭제 
     public void pop() {
-        if(empty()) {
+        if(isEmpty()) {
             System.out.println("큐에 아무런 데이터도 없습니다.");
         } else {
-            front += (1 % SIZE);
+            front = (front+1) % SIZE;
             queue[front] = null;
         }
     }
@@ -66,6 +66,8 @@ public class Queue<T>{
         for(int i=0; i<SIZE; i++){
             qe1.push("hello");
         }
+        qe1.pop();
+        qe1.pop();
         qe1.pop();
         qe1.print();
 
